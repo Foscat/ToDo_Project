@@ -6,6 +6,8 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Cha-cha-changes</title>
+                <div th:replace="fragments/cdn :: css" ></div>
+        
         <link rel="stylesheet" href="css/main.css">
     </head>
 
@@ -21,6 +23,8 @@
             </div>
         </div>
     </body>
-
+ <footer>
+        <div th:replace="fragments/cdn :: js" ></div>
+    </footer>
     
 </html>

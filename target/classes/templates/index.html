@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Main Page</title>
         <div th:replace="fragments/cdn :: css" ></div>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="main/style.css">
         
     </head>
 
@@ -47,11 +47,11 @@
                                 <h5 th:text="${todoList.body}"></h5>
 
                                 <!-- button to change if task is done or not -->
-                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${task.compleated == true}" th:method="PUT">
-                                    <button type="submit" class="btn done">Done</button>
+                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == true}" th:method="PUT">
+                                    <button th:href  type="submit" class="btn done">Done</button>
                                 </form>
 
-                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${task.compleated == false}" th:method="PUT">
+                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == false}" th:method="PUT">
                                     <button type="submit" class="btn do">Do it</button>
                                 </form>
 
@@ -59,14 +59,14 @@
 
                             <div class="card-footer">
 
-                                <form style="float: left" th:action="@{'/{id}'(id=${task.id})}" th:method="delete">
+                                <form style="float: left" th:action="@{'/{id}'(id=${todoList.id})}" th:method="delete">
                                     <div class="form-group">
                                         <input type="hidden" name="_method" value="delete" />
                                         <button type="submit" class="btn btn-danger">X</button>
                                     </div>
                                 </form>
 
-                                <a style="float: right" th:href="@{'/edit/info/{id}'(id=${task.id})}">
+                                <a style="float: right" th:href="@{'/edit/info/{id}'(id=${todoList.id})}">
                                     <button class="btn btn-warning">Edit</button>
                                 </a>
 

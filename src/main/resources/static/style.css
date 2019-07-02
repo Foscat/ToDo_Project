@@ -3,6 +3,7 @@ body {
     background-color: wheat;
 }
 button{
+	clip-path: polygon(20% 26%, 100% 0, 71% 68%, 0 100%);
     font-weight: bold
 }
 

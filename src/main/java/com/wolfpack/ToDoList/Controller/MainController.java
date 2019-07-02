@@ -22,7 +22,8 @@ public class MainController {
 //	public TodoList todoList;
 	
 	@GetMapping("/")
-	public String getIndexpage() {
+	public String getIndexpage(Model model) {
+		model.addAttribute("todoList", todoRepository.findAll());
 		return"index";
 	}
 	@GetMapping("/makeTodo")
