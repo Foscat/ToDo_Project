@@ -1,12 +1,60 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Make Task</title>
+        <div th:replace="fragments/cdn :: css" ></div>
+        <link rel="stylesheet" href="css/task.css">
+        
+    </head>
+
+    <body>
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+        <div class="container">
+            <div class="jumbotron">
+                <h1>Make a new task</h1>
+            </div>
+            <div class="row">
+                <div class="col">
+                    <div class="card">
+                        <div class="card-head">
+                            <h3>Fill out the form.</h3>
+                            <h5>Digital World Alert!! Who Use Paper Nowadays</h5>
+                        </div>
+                        <div class="card-body">
+                            <form th:action="@{/makeTodo}" th:object="${todoList}" method="POST">
+                                <div class="form-group">
+                                    <label for="title">Title</label>
+                                    <input type="text" th:field="*{title}" class="form-control" id="title" placeholder="Name of Title">
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="author">author</label>
+                                    <textarea th:field="*{author}" class="form-control" id="author" rows="3" placeholder="Name of Author"></textarea>
+                                </div>
+                                
+                                
+                                <div class="form-group">
+                                    <label for="body">Body</label>
+                                    <textarea th:field="*{body}" class="form-control" id="body" rows="3" placeholder="Your Content"></textarea>
+                                </div>
+
+                                <button type="submit" class="btn">Submit</button>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+    </body>
+
+    <footer>
+        <div th:replace="fragments/cdn :: js" ></div>
+    </footer>
 </html>

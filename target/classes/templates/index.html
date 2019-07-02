@@ -1,12 +1,90 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
+
+    <html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Main Page</title>
+        <div th:replace="fragments/cdn :: css" ></div>
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+
+    <body>
+        
+        <div th:replace="fragments/navbar :: navbar" ></div>
+
+        <div class="container">
+            <!-- Welcome box -->
+            <div class="jumbotron">
+                <h1>Welcome to the to task manager</h1>
+            </div>
+
+            <!-- Row for holding tasks -->
+            <div class="row">
+                <!-- thymeleaf for each loop -->
+                <div th:each="todoList:${todoList}">
+
+                    <div class="col">
+
+                        <div class="card">
+
+                            <div class="card-head">
+
+                                <h3 class="ml-2" th:text="${todoList.title}"></h3>
+
+                            </div>
+                            
+                            <div class="card-head">
+
+                                <h3 class="ml-2" th:text="${todoList.author}"></h3>
+
+                            </div>
+
+                            <div class="card-body">
+
+                                <h5 th:text="${todoList.body}"></h5>
+
+                                <!-- button to change if task is done or not -->
+                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${task.compleated == true}" th:method="PUT">
+                                    <button type="submit" class="btn done">Done</button>
+                                </form>
+
+                                <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${task.compleated == false}" th:method="PUT">
+                                    <button type="submit" class="btn do">Do it</button>
+                                </form>
+
+                            </div>
+
+                            <div class="card-footer">
+
+                                <form style="float: left" th:action="@{'/{id}'(id=${task.id})}" th:method="delete">
+                                    <div class="form-group">
+                                        <input type="hidden" name="_method" value="delete" />
+                                        <button type="submit" class="btn btn-danger">X</button>
+                                    </div>
+                                </form>
+
+                                <a style="float: right" th:href="@{'/edit/info/{id}'(id=${task.id})}">
+                                    <button class="btn btn-warning">Edit</button>
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+    <footer>
+        <div th:replace="fragments/cdn :: js" ></div>
+        <script src="js/main.js"></script>
+        
+    </footer>
 </html>

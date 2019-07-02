@@ -1,3 +1,44 @@
 body {
-    background-color: thistle;
+    margin: 10px;
+    background-color: wheat;
+}
+button{
+    font-weight: bold
+}
+
+.do {
+    border: 2px solid darkred;
+    background-color: darkblue;
+    color: snow;
+}
+
+.done {
+    border: 2px solid green;
+    background-color: gold;
+    color: navy;
+}
+
+/* Add special styling to bootstrap classes */
+.card{
+    border: 1px double rgb(109, 7, 7);
+    margin: 5px;
+    padding: 5px;
+    background-color: rgba(152, 167, 194, 0.644)
+}
+.card-head {
+    margin: 3px;
+    border-radius: 5px;
+    background-color: rgba(92, 3, 3, 0.411);
+}
+.card-body {
+    margin: 3px;
+    border-radius: 5px;
+    background-color: rgba(3, 31, 92, 0.411);
+}
+.btn {
+    font-weight: 500;
+}
+
+#gotcha:hover{
+    cursor: help;
 }

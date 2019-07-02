@@ -1,14 +1,20 @@
 package com.wolfpack.ToDoList.Model;
 
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
 
 @Entity
 public class TodoList {
-
+    @Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String title;
     private String author;
     private String body;
+    
+    private boolean compleated;
 
     public TodoList(){
 
@@ -50,6 +56,15 @@ public class TodoList {
 
 	public void setBody(String body) {
 		this.body = body;
+	}
+	
+
+	public boolean isCompleated() {
+		return compleated;
+	}
+
+	public void setCompleated(boolean compleated) {
+		this.compleated = compleated;
 	}
 
 	@Override
