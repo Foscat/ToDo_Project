@@ -21,10 +21,11 @@ public class TodoList {
 
     }
 
-    public TodoList(String title, String author, String body){
+    public TodoList(String title, String author, String body, boolean compleated){
         this.title = title;
         this.author = author;
-        this.body = body;
+		this.body = body;
+		this.compleated = compleated;
     }
 
 	public Long getId() {
