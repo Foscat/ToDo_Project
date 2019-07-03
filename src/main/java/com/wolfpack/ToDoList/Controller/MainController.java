@@ -24,15 +24,18 @@ public class MainController {
 	@GetMapping("/")
 	public String getIndexpage(Model model) {
 		// Comment line out to make 'mvcTest()' pass for jUnit
-		model.addAttribute("todoList", todoRepository.findAll());
+		Iterable<TodoList> myList = todoRepository.findAll();
+		model.addAttribute("todoList", myList);
 		return"index";
 	}
-	@GetMapping("/makeTodo")
+
+	@GetMapping("/make")
 	public String getMakeTodoPage(Model model) {
 		TodoList todoList = new TodoList();
 		model.addAttribute("todoList", todoList);
 		return"makeTodo";
 	}
+
 	@PostMapping("/makeTodo")
     public String makeTask(TodoList todoList, Model model){
         todoRepository.save(todoList);
@@ -40,18 +43,21 @@ public class MainController {
         model.addAttribute("Author",todoList.getAuthor());
         model.addAttribute("Body", todoList.getBody());
         return "changes";
-   }
+	}
+	
 	@DeleteMapping("/{id}")
     public String deleteTaskById(@PathVariable Long id, TodoList todoList){
         todoRepository.deleteById(id);
         return "changes";
-    }
+	}
+	
 	@GetMapping("/edit/info/{id}")
     public String editForm(@PathVariable Long id, Model model){
        TodoList todoList = todoRepository.findById(id).orElseThrow(() -> new IllegalArgumentException("Invalid id: "+ id));
         model.addAttribute("todoList", todoList);
         return "editTodo";
-    }
+	}
+	
 	@PutMapping("/edit/info/{id}")
     public String editTask(@PathVariable Long id, TodoList todoList, Model model) {
         TodoList editedTodoList = todoRepository.findById(id).orElse(null);
@@ -68,31 +74,30 @@ public class MainController {
 
 
         return "changes";
-    }
-	 @PutMapping("/edit/compleate/{id}")
-	    public String editDone(@PathVariable Long id, Model model){
+	}
+	
+	@PutMapping("/edit/compleate/{id}")
+	public String editDone(@PathVariable Long id, Model model){	
 
-	        TodoList editedTodoList = todoRepository.findById(id).orElse(null);
+		TodoList editedTodoList = todoRepository.findById(id).orElse(null);
 
-	        System.out.println("Before: " + editedTodoList.isCompleated());
+		System.out.println("Before: " + editedTodoList.isCompleated());
 
-	        if(editedTodoList.isCompleated()){
-	            System.out.println("it was true");
-	            editedTodoList.setCompleated(false);
-	        }
-	        else{
-	            System.out.println("it was false");
-	            editedTodoList.setCompleated(true);
-	        }
+		if(editedTodoList.isCompleated()){
+			System.out.println("it was true");
+			editedTodoList.setCompleated(false);
+		}
+		else{
+			System.out.println("it was false");
+			editedTodoList.setCompleated(true);
+		}
 
-	        todoRepository.save(editedTodoList);
-	        
-	        System.out.println("After: " + editedTodoList.isCompleated());
-	        model.addAttribute("compleated", editedTodoList.isCompleated());
+		todoRepository.save(editedTodoList);
+		
+		System.out.println("After: " + editedTodoList.isCompleated());
+		model.addAttribute("compleated", editedTodoList.isCompleated());
 
-	        return "changes";
-
-
-}
+		return "changes";
+	}
 }
 
