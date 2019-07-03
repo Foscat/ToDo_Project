@@ -18,8 +18,6 @@ public class MainController {
 	@Autowired
 	public TodoRepository todoRepository;
 	
-//	@Autowired
-//	public TodoList todoList;
 	
 	@GetMapping("/")
 	public String getIndexpage(Model model) {

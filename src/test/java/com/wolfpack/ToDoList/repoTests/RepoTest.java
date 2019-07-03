@@ -20,50 +20,6 @@ public class RepoTest {
     TodoRepository todoRepository;
 
     @Test
-    public void findById() {
-
-        TodoList todoList = new TodoList();
-        todoList.setId(1L);
-        todoRepository.save(todoList);
-
-        assertNotNull(todoList.getId());
-        
-    }
-
-    @Test
-    public void title() {
-
-        TodoList todoList = new TodoList();
-        todoList.setTitle("title");
-        todoRepository.save(todoList);
-
-        assertNotNull(todoList.getTitle());
-        
-    }
-
-    @Test
-    public void author() {
-
-        TodoList todoList = new TodoList();
-        todoList.setAuthor("Author");
-        todoRepository.save(todoList);
-
-        assertNotNull(todoList.getAuthor());
-        
-    }
-
-    @Test
-    public void body() {
-
-        TodoList todoList = new TodoList();
-        todoList.setBody("Body");
-        todoRepository.save(todoList);
-
-        assertNotNull(todoList.getBody());
-        
-    }
-
-    @Test
     public void entry() {
 
         TodoList todoList = new TodoList();
@@ -73,6 +29,20 @@ public class RepoTest {
         todoRepository.save(todoList);
 
         assertNotNull(todoRepository.findAll());
+        
+    }
+
+    @Test
+    public void entryById() {
+
+        TodoList todoList = new TodoList();
+        todoList.setId(1L);
+        todoList.setTitle("title");
+        todoList.setAuthor("Author");
+        todoList.setBody("Body");
+        todoRepository.save(todoList);
+
+        assertNotNull(todoRepository.findById(1L));
         
     }
 }
