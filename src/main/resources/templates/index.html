@@ -7,7 +7,7 @@
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
         <title>Main Page</title>
         <div th:replace="fragments/cdn :: css" ></div>
-        <link rel="stylesheet" href="main/style.css">
+        <link rel="stylesheet" href="css/style.css">
         
     </head>
 
@@ -18,7 +18,14 @@
         <div class="container">
             <!-- Welcome box -->
             <div class="jumbotron">
-                <h1>Welcome to the to task manager</h1>
+               <div class="row">
+                <div class="col">
+                    <h1>Welcome to the to task manager</h1>
+                </div>
+                <div class="col">
+                    <img height="75%" width="75%" src="images/wolfPack.png" alt="wolfpack">
+                </div>
+               </div>
             </div>
 
             <!-- Row for holding tasks -->
@@ -84,7 +91,7 @@
 
     <footer>
         <div th:replace="fragments/cdn :: js" ></div>
-        <script src="js/main.js"></script>
+        <script src="js/apiCall.js"></script>
         
     </footer>
 </html>

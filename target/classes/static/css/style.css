@@ -3,13 +3,20 @@ body {
     background-color: wheat;
 }
 button{
-	clip-path: polygon(20% 26%, 100% 0, 71% 68%, 0 100%);
-    font-weight: bold
+	/* clip-path: polygon(20% 26%, 100% 0, 71% 68%, 0 100%); */
+    font-weight: bold;
+}
+
+label {
+    color: rgb(51, 209, 51);
+    font-size: 110%;
+    font-weight: 700;
+
 }
 
 .do {
-    border: 2px solid darkred;
-    background-color: darkblue;
+    border: 2px solid #b40303;
+    background-color: rgb(51, 209, 51);
     color: snow;
 }
 
@@ -21,7 +28,7 @@ button{
 
 /* Add special styling to bootstrap classes */
 .card{
-    border: 1px double rgb(109, 7, 7);
+    border: 1px double #b40303;
     margin: 5px;
     padding: 5px;
     background-color: rgba(152, 167, 194, 0.644)
@@ -29,12 +36,13 @@ button{
 .card-head {
     margin: 3px;
     border-radius: 5px;
-    background-color: rgba(92, 3, 3, 0.411);
+    background-color: #b403035d;
 }
 .card-body {
     margin: 3px;
     border-radius: 5px;
-    background-color: rgba(3, 31, 92, 0.411);
+    background-color: #6034a8;
+    color: aliceblue
 }
 .btn {
     font-weight: 500;
