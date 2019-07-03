@@ -23,6 +23,7 @@ public class MainController {
 	
 	@GetMapping("/")
 	public String getIndexpage(Model model) {
+		// Comment line out to make 'mvcTest()' pass for jUnit
 		model.addAttribute("todoList", todoRepository.findAll());
 		return"index";
 	}
