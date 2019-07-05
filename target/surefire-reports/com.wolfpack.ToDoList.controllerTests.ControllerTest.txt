@@ -1,4 +1,4 @@
 -------------------------------------------------------------------------------
 Test set: com.wolfpack.ToDoList.controllerTests.ControllerTest
 -------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.275 s - in com.wolfpack.ToDoList.controllerTests.ControllerTest
+Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 1.229 s - in com.wolfpack.ToDoList.controllerTests.ControllerTest
