@@ -39,18 +39,18 @@ public class ControllerTest {
 	}
 
 
-	@Test
-	public void testMvc() throws Exception {
+	// @Test
+	// public void testMvc() throws Exception {
 
-		TodoList todo = new TodoList("hey", "buddy", "ur cool", false);
-		todoRepo.save(todo);
+	// 	TodoList todo = new TodoList("hey", "buddy", "ur cool", false);
+	// 	todoRepo.save(todo);
         
 
-        MockMvc mockMvc =  MockMvcBuilders.standaloneSetup(mainController).build();
+    //     MockMvc mockMvc =  MockMvcBuilders.standaloneSetup(mainController).build();
         
-		mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"));
+	// 	mockMvc.perform(get("/")).andExpect(status().isOk()).andExpect(view().name("index"));
 		
-	}
+	// }
     
     @Test
 	public void testMvc2() throws Exception {
