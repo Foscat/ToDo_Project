@@ -15,3 +15,6 @@ Todos when created will initally false and come with a button that allows you to
 
 ### Deployed version
 **http://todoproject.cfapps.io/**
+
+#### External kanban
+**https://www.pivotaltracker.com/n/projects/2360774**
