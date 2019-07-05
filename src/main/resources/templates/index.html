@@ -39,19 +39,19 @@
 
                             <div class="card-head">
 
-                                <h3 class="ml-2" th:text="${todoList.title}"></h3>
+                                <h4 class="ml-2">Title: <span th:text="${todoList.title}"></span></h4>
 
                             </div>
                             
                             <div class="card-head">
 
-                                <h3 class="ml-2" th:text="${todoList.author}"></h3>
+                                <h5 class="ml-2">Author: <span th:text="${todoList.author}"></span></h5>
 
                             </div>
 
                             <div class="card-body">
 
-                                <h5 th:text="${todoList.body}"></h5>
+                                <h6 th:text="${todoList.body}"></h6>
 
                                 <!-- button to change if task is done or not -->
                                 <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == true}" th:method="PUT">
@@ -59,7 +59,7 @@
                                 </form>
 
                                 <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == false}" th:method="PUT">
-                                    <button type="submit" class="btn do">Do it</button>
+                                    <button type="submit" class="btn btn-sm do">Do it</button>
                                 </form>
 
                             </div>

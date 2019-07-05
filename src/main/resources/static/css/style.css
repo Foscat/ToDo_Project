@@ -1,48 +1,54 @@
 body {
     margin: 10px;
-    background-color: wheat;
+    background-color: rgb(124,92,255);
 }
 button{
 	/* clip-path: polygon(20% 26%, 100% 0, 71% 68%, 0 100%); */
     font-weight: bold;
 }
 
+.submitter {
+    background-color: forestgreen;
+    color: rgb(255,255,255);
+}
+
 label {
-    color: rgb(51, 209, 51);
+    color: rgb(0, 0, 0);
     font-size: 110%;
     font-weight: 700;
 
 }
 
 .do {
-    border: 2px solid #b40303;
-    background-color: rgb(51, 209, 51);
+    /* border: 2px solid #b40303; */
+    background-color: rgb(47, 87, 67);
     color: snow;
 }
 
 .done {
-    border: 2px solid green;
-    background-color: gold;
-    color: navy;
+    /* border: 2px solid rgb(241,200,11); */
+    background-color: rgb(4, 97, 27);
+    color: rgb(255,255,255);
 }
 
 /* Add special styling to bootstrap classes */
 .card{
-    border: 1px double #b40303;
+    border: 1px double #490202;
     margin: 5px;
     padding: 5px;
     background-color: rgba(152, 167, 194, 0.644)
 }
 .card-head {
     margin: 3px;
-    border-radius: 5px;
-    background-color: #b403035d;
+    /* border-radius: 5px; */
+    /* background-color: rgb(255,255,255); */
+    color: black;
 }
 .card-body {
     margin: 3px;
     border-radius: 5px;
-    background-color: #6034a8;
-    color: aliceblue
+    /* background-color: rgb(155, 153, 153); */
+    color: black;
 }
 .btn {
     font-weight: 500;
