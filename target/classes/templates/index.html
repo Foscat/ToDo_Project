@@ -49,13 +49,15 @@
 
                             </div>
 
+                            <hr>
+
                             <div class="card-body">
 
                                 <h6 th:text="${todoList.body}"></h6>
 
                                 <!-- button to change if task is done or not -->
                                 <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == true}" th:method="PUT">
-                                    <button th:href  type="submit" class="btn done">Done</button>
+                                    <button th:href  type="submit" class="btn btn-sm done">Done</button>
                                 </form>
 
                                 <form th:action="@{'/edit/compleate/{id}'(id=${todoList.id})}" th:if="${todoList.compleated == false}" th:method="PUT">
@@ -69,12 +71,12 @@
                                 <form style="float: left" th:action="@{'/{id}'(id=${todoList.id})}" th:method="delete">
                                     <div class="form-group">
                                         <input type="hidden" name="_method" value="delete" />
-                                        <button type="submit" class="btn btn-danger">X</button>
+                                        <button type="submit" class="btn btn-sm btn-danger">X</button>
                                     </div>
                                 </form>
 
                                 <a style="float: right" th:href="@{'/edit/info/{id}'(id=${todoList.id})}">
-                                    <button class="btn btn-warning">Edit</button>
+                                    <button class="btn btn-sm btn-warning">Edit</button>
                                 </a>
 
                             </div>
